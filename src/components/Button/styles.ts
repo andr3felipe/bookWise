@@ -19,6 +19,10 @@ export const Container = styled.button<ContainerProps>`
   justify-content: flex-start;
   gap: 20px;
 
+  &:focus {
+    box-shadow: 0 0 0 2px ${(props) => props.theme["purple"]};
+  }
+
   &:hover {
     border: 2px solid ${(props) => props.theme["gray-500"]};
   }

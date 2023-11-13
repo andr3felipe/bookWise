@@ -6,6 +6,6 @@ export const Container = styled.div`
   padding: calc(72px - 20px) 96px;
 
   @media (width <= 800px) {
-    padding: 0;
+    padding: 20px;
   }
 `;

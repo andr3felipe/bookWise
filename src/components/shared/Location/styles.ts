@@ -10,4 +10,8 @@ export const Container = styled.div`
   > svg {
     color: ${(props) => props.theme["green-100"]};
   }
+
+  @media (width <= 800px) {
+    margin-left: 20px;
+  }
 `;

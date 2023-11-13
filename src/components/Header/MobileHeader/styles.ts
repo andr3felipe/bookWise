@@ -1,12 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animation = keyframes`
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+`;
 
 export const Blur = styled.div`
   position: absolute;
-  background-color: transparent;
+  background-color: rgb(0, 0, 0, 0.3);
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
+  top: -20px;
+  left: -20px;
 `;
 
 export const MobileOpen = styled.button`
@@ -34,6 +45,7 @@ export const MobileClose = styled.button`
   justify-content: flex-end;
   width: 100%;
   cursor: pointer;
+  position: relative;
 
   box-shadow: none;
   border: none;
@@ -62,7 +74,10 @@ export const HeaderContainer = styled.div`
 export const Header = styled.header`
   border-radius: 12px;
   height: 300px;
+  position: relative;
+  z-index: 9999;
 
+  animation: ${animation} 0.2s linear normal;
   padding: 20px 26px;
   background-color: ${(props) => props.theme["gray-700"]};
 `;
