@@ -1,8 +1,4 @@
-import styled, { css } from "styled-components";
-
-type TextProps = {
-  padding?: string;
-};
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -14,23 +10,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Text = styled.p<TextProps>`
-  ${({ padding }) =>
-    padding &&
-    css`
-      padding: ${padding};
-    `}
+export const Text = styled.p`
+  padding-bottom: 16px;
 `;
 
 export const Main = styled.main`
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 60% 40%;
   width: 100%;
   gap: 64px;
 
   margin-top: 40px;
 
-  @media (width <= 950px) {
+  @media (width <= 1200px) {
     display: flex;
     flex-direction: column;
   }
@@ -39,6 +31,10 @@ export const Main = styled.main`
 export const RecentRatings = styled.div`
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const PopularBooks = styled.aside`

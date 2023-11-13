@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { CardRootProps } from ".";
 
-export const Container = styled.div`
+type ContainerProps = Pick<CardRootProps, "size">;
+
+export const Container = styled.div<ContainerProps>`
   background-color: ${(props) => props.theme["gray-700"]};
-  max-width: 608px;
+  max-width: ${({ size }) => (size === "large" ? "608px" : "324px")};
   width: 100%;
-  max-height: 280px;
+  max-height: ${({ size }) => (size === "large" ? "280px" : "130px")};
   height: 100%;
   border-radius: 8px;
   border: 2px solid transparent;

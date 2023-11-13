@@ -20,11 +20,11 @@ export const CardSummary = ({ text }: CardSummaryProps) => {
 
   const textLength =
     windowSize.width <= 600
-      ? text.slice(0, windowSize.width / 4).length
+      ? text.slice(0, windowSize.width / 5).length
       : text.slice(0, windowSize.width / 8).length;
 
   const calc =
-    windowSize.width <= 600 ? windowSize.width / 4 : windowSize.width / 8;
+    windowSize.width <= 600 ? windowSize.width / 5 : windowSize.width / 8;
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

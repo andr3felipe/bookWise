@@ -1,10 +1,12 @@
 import * as S from "./styles";
 
-type CardImageProps = React.ComponentProps<"img">;
+export type CardImageProps = {
+  size: "small" | "large";
+} & React.ComponentProps<"img">;
 
-export const CardImage = ({ ...rest }: CardImageProps) => {
+export const CardImage = ({ size, ...rest }: CardImageProps) => {
   return (
-    <S.Container>
+    <S.Container size={size}>
       <img {...rest} />
     </S.Container>
   );

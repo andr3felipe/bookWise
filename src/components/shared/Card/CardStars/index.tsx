@@ -5,7 +5,7 @@ type CardStarsProps = {
 };
 
 export const CardStars = ({ stars }: CardStarsProps) => {
-  const RenderStar = (number: number) => {
+  const renderStars = (number: number): JSX.Element[] => {
     const array = [];
 
     for (let i = 0; i < 5; i++) {
@@ -23,5 +23,5 @@ export const CardStars = ({ stars }: CardStarsProps) => {
     return array;
   };
 
-  return <S.Container>{RenderStar(stars).map((item) => item)}</S.Container>;
+  return <S.Container>{renderStars(stars).map((item) => item)}</S.Container>;
 };
