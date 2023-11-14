@@ -42,7 +42,7 @@ export const MobileHeader = () => {
                   Explorar
                 </NavItem>
               </S.NavAlignItems>
-              <NavItem onClick={() => toggle(false)} to={"/login"}>
+              <NavItem onClick={() => toggle(false)} to={"/"}>
                 Fazer login
                 <SignIn size={24} />
               </NavItem>

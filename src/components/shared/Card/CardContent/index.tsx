@@ -1,9 +1,13 @@
 import * as S from "./styles";
 
-type CardContentProps = {
+export type CardContentProps = {
   children: React.ReactNode;
+  justifyContent?: "flex-start" | "space-between";
 };
 
-export const CardContent = ({ children }: CardContentProps) => {
-  return <S.Container>{children}</S.Container>;
+export const CardContent = ({
+  children,
+  justifyContent = "flex-start",
+}: CardContentProps) => {
+  return <S.Container justifyContent={justifyContent}>{children}</S.Container>;
 };

@@ -32,10 +32,10 @@ export const Explorar = () => {
       </S.CategoriesContainer>
       <S.BooksContainer>
         {books.map((book) => (
-          <Card.Root size="small">
+          <Card.Root size="large">
             <Card.Body>
-              <Card.Image size="small" src={book.image} />
-              <Card.Content>
+              <Card.Image size="large" src={book.image} />
+              <Card.Content justifyContent="space-between">
                 <Card.Title authorName={book.author} bookTitle={book.title} />
                 <Card.Stars stars={4.5} />
               </Card.Content>

@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
+  height: 100%;
 
   gap: 20px;
 `;

@@ -4,6 +4,7 @@ import { Location } from "../../components/shared/Location";
 import { ChartLineUp } from "@phosphor-icons/react";
 import book from "../../assets/book.png";
 import avatar from "../../assets/avatar.png";
+import { books } from "../../books/books";
 
 export const Home = () => {
   return (
@@ -38,38 +39,54 @@ export const Home = () => {
           <S.RecentRatings>
             <S.Text>Avaliações mais recentes</S.Text>
 
-            <Card.Root size="large">
-              <Card.Head size="large">
-                <Card.Profile avatar={avatar} date="Hoje" name="Andre Felipe" />
-                <Card.Stars stars={4} />
-              </Card.Head>
-              <Card.Body>
-                <Card.Image size="large" src={book} />
-                <Card.Content>
-                  <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
-                  <Card.Summary
-                    size="large"
-                    text="Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
+            {books.slice(0, 4).map((book) => (
+              <Card.Root size="large">
+                <Card.Head size="large">
+                  <Card.Profile
+                    avatar={avatar}
+                    date="Hoje"
+                    name="Andre Felipe"
+                  />
+                  <Card.Stars stars={4} />
+                </Card.Head>
+                <Card.Body>
+                  <Card.Image size="large" src={book.image} />
+                  <Card.Content>
+                    <Card.Title
+                      authorName={book.author}
+                      bookTitle={book.title}
+                    />
+                    <Card.Summary
+                      size="large"
+                      text="Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
                      Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta 
                      eget nec vitae sit vulputate eget"
-                  />
-                </Card.Content>
-              </Card.Body>
-            </Card.Root>
+                    />
+                  </Card.Content>
+                </Card.Body>
+              </Card.Root>
+            ))}
           </S.RecentRatings>
         </S.MainAlign>
         <S.PopularBooks>
           <S.Text spacing="16px">Livros populares</S.Text>
 
-          <Card.Root size="small">
-            <Card.Body>
-              <Card.Image size="small" src={book} />
-              <Card.Content>
-                <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
-                <Card.Stars stars={4.5} />
-              </Card.Content>
-            </Card.Body>
-          </Card.Root>
+          <S.PopularBooksAlign>
+            {books.slice(0, 4).map((book) => (
+              <Card.Root size="small">
+                <Card.Body>
+                  <Card.Image size="small" src={book.image} />
+                  <Card.Content>
+                    <Card.Title
+                      authorName={book.author}
+                      bookTitle={book.title}
+                    />
+                    <Card.Stars stars={4.5} />
+                  </Card.Content>
+                </Card.Body>
+              </Card.Root>
+            ))}
+          </S.PopularBooksAlign>
         </S.PopularBooks>
       </S.Main>
     </S.Container>

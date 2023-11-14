@@ -19,7 +19,7 @@ export const DesktopHeader = () => {
               Explorar
             </NavItem>
           </S.NavAlignItems>
-          <NavItem to={"/login"}>
+          <NavItem to={"/"}>
             Fazer login
             <SignIn size={24} />
           </NavItem>

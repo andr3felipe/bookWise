@@ -65,3 +65,11 @@ export const PopularBooks = styled.aside`
   width: 100%;
   height: 100%;
 `;
+
+export const PopularBooksAlign = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-direction: column;
+`;
