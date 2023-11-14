@@ -29,29 +29,12 @@ export const LocationContainer = styled.div`
   }
 `;
 
-export const CategoriesContainer = styled.div`
+export const Main = styled.main`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 12px;
-  padding-top: 40px;
-  padding-bottom: 48px;
-`;
+  flex-direction: column;
+  gap: 24px;
 
-export const BooksContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  max-width: 1000px;
-
-  @media (1400px >= width >= 1100px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (width <= 1100px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+  padding-top: 32px;
 `;

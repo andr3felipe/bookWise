@@ -63,11 +63,12 @@ export const MobileClose = styled.button`
 `;
 
 export const HeaderContainer = styled.div`
-  position: absolute;
   display: none;
 
   @media (width <= 800px) {
     display: block;
+    position: fixed;
+    z-index: 99999;
   }
 `;
 

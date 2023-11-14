@@ -8,11 +8,13 @@ const ENUM = {
     small: "324px",
     medium: "608px",
     large: "608px",
+    xl: "624px",
   },
   height: {
     small: "130px",
     medium: "192px",
     large: "280px",
+    xl: "360px",
   },
 };
 

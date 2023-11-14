@@ -8,6 +8,7 @@ import {
   SignIn,
   CaretLeft,
   List,
+  User,
 } from "@phosphor-icons/react";
 
 export const MobileHeader = () => {
@@ -18,7 +19,7 @@ export const MobileHeader = () => {
   };
 
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer data-testid="mobile-header">
       {!show && (
         <S.MobileOpen onClick={() => toggle(true)}>
           <List size={24} />
@@ -33,16 +34,43 @@ export const MobileHeader = () => {
             <Icon icon="bookWise" />
             <S.Nav>
               <S.NavAlignItems>
-                <NavItem onClick={() => toggle(false)} to={"/inicio"}>
+                <NavItem
+                  onClick={() => {
+                    toggle(false);
+                    window.scrollTo(0, 0);
+                  }}
+                  to={"/inicio"}
+                >
                   <ChartLineUp size={24} />
                   Início
                 </NavItem>
-                <NavItem onClick={() => toggle(false)} to={"/explorar"}>
+                <NavItem
+                  onClick={() => {
+                    toggle(false);
+                    window.scrollTo(0, 0);
+                  }}
+                  to={"/explorar"}
+                >
                   <Binoculars size={24} />
                   Explorar
                 </NavItem>
+                <NavItem
+                  onClick={() => {
+                    toggle(false);
+                    window.scrollTo(0, 0);
+                  }}
+                  to={"/perfil"}
+                >
+                  <User size={24} />
+                  Perfil
+                </NavItem>
               </S.NavAlignItems>
-              <NavItem onClick={() => toggle(false)} to={"/"}>
+              <NavItem
+                onClick={() => {
+                  toggle(false);
+                }}
+                to={"/"}
+              >
                 Fazer login
                 <SignIn size={24} />
               </NavItem>

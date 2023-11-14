@@ -5,6 +5,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   max-height: 988px;
   height: calc(100vh - 40px);
+  position: fixed;
 
   @media (width <= 800px) {
     display: none;

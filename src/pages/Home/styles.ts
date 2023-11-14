@@ -12,6 +12,10 @@ export const Container = styled.div`
   @media (width <= 800px) {
     padding: 20px;
   }
+
+  @media (width >= 800px) {
+    margin-left: 232px;
+  }
 `;
 
 export const Text = styled.p<TextProps>`

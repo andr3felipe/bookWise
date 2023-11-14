@@ -3,10 +3,15 @@ import * as S from "./styles";
 
 export type CardSummaryProps = {
   text: string;
-  size?: "small" | "large" | "medium";
+  size?: "small" | "medium" | "large";
+  padding?: string;
 };
 
-export const CardSummary = ({ text, size = "large" }: CardSummaryProps) => {
+export const CardSummary = ({
+  text,
+  size = "large",
+  padding,
+}: CardSummaryProps) => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -40,7 +45,7 @@ export const CardSummary = ({ text, size = "large" }: CardSummaryProps) => {
   }, []);
 
   return (
-    <S.Container>
+    <S.Container padding={padding}>
       <S.Text size={size}>
         {text.slice(0, calc).padEnd(textLength + 3, "...")}
       </S.Text>
