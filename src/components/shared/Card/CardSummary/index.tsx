@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import * as S from "./styles";
 
-type CardSummaryProps = {
+export type CardSummaryProps = {
   text: string;
+  size?: "small" | "large" | "medium";
 };
 
-export const CardSummary = ({ text }: CardSummaryProps) => {
+export const CardSummary = ({ text, size = "large" }: CardSummaryProps) => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -20,11 +21,15 @@ export const CardSummary = ({ text }: CardSummaryProps) => {
 
   const textLength =
     windowSize.width <= 600
-      ? text.slice(0, windowSize.width / 5).length
-      : text.slice(0, windowSize.width / 8).length;
+      ? text.slice(0, windowSize.width / (5 + (size !== "large" ? 6 : 0)))
+          .length
+      : text.slice(0, windowSize.width / (9 + (size !== "large" ? 5 : 0)))
+          .length;
 
   const calc =
-    windowSize.width <= 600 ? windowSize.width / 5 : windowSize.width / 8;
+    windowSize.width <= 600
+      ? windowSize.width / (5 + (size !== "large" ? 6 : 0))
+      : windowSize.width / (9 + (size !== "large" ? 5 : 0));
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -36,7 +41,9 @@ export const CardSummary = ({ text }: CardSummaryProps) => {
 
   return (
     <S.Container>
-      <S.Text>{text.slice(0, calc).padEnd(textLength + 3, "...")}</S.Text>
+      <S.Text size={size}>
+        {text.slice(0, calc).padEnd(textLength + 3, "...")}
+      </S.Text>
     </S.Container>
   );
 };

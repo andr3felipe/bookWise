@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 export type CardRootProps = {
   children: React.ReactNode;
-  size: "small" | "large";
+  size: "small" | "medium" | "large";
 };
 
 export const CardRoot = ({ children, size }: CardRootProps) => {

@@ -11,33 +11,62 @@ export const Home = () => {
       <Location icon={ChartLineUp} size={34} text="Início" />
 
       <S.Main>
-        <S.RecentRatings>
-          <S.Text>Avaliações mais recentes</S.Text>
+        <S.MainAlign>
+          <S.LastReadings>
+            <S.Text>Sua última leitura</S.Text>
 
-          <Card.Root size="large">
-            <Card.Head>
-              <Card.Profile avatar={avatar} date="Hoje" name="Andre Felipe" />
-              <Card.Stars stars={1.9} />
-            </Card.Head>
-            <Card.Body>
-              <Card.Image size="large" src={book} />
-              <Card.Content>
-                <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
-                <Card.Summary text="Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget" />
-              </Card.Content>
-            </Card.Body>
-          </Card.Root>
-        </S.RecentRatings>
+            <Card.Root size="medium">
+              <Card.Body>
+                <Card.Image size="large" src={book} />
+                <Card.Content>
+                  <Card.Head size="medium">
+                    <Card.Profile date="Hoje" />
+                    <Card.Stars stars={4} />
+                  </Card.Head>
+                  <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
+                  <Card.Summary
+                    size="medium"
+                    text="Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
+                     Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta
+                      eget nec vitae sit vulputate eget"
+                  />
+                </Card.Content>
+              </Card.Body>
+            </Card.Root>
+          </S.LastReadings>
 
+          <S.RecentRatings>
+            <S.Text>Avaliações mais recentes</S.Text>
+
+            <Card.Root size="large">
+              <Card.Head size="large">
+                <Card.Profile avatar={avatar} date="Hoje" name="Andre Felipe" />
+                <Card.Stars stars={4} />
+              </Card.Head>
+              <Card.Body>
+                <Card.Image size="large" src={book} />
+                <Card.Content>
+                  <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
+                  <Card.Summary
+                    size="large"
+                    text="Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
+                     Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta 
+                     eget nec vitae sit vulputate eget"
+                  />
+                </Card.Content>
+              </Card.Body>
+            </Card.Root>
+          </S.RecentRatings>
+        </S.MainAlign>
         <S.PopularBooks>
-          <S.Text>Livros populares</S.Text>
+          <S.Text spacing="16px">Livros populares</S.Text>
 
           <Card.Root size="small">
             <Card.Body>
               <Card.Image size="small" src={book} />
               <Card.Content>
                 <Card.Title authorName="J.R.R Tolkien" bookTitle="O Hobbit" />
-                <Card.Stars stars={4} />
+                <Card.Stars stars={4.5} />
               </Card.Content>
             </Card.Body>
           </Card.Root>

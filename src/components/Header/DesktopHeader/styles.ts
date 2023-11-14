@@ -4,7 +4,7 @@ export const HeaderContainer = styled.div`
   max-width: 232px;
   width: 100%;
   max-height: 988px;
-  height: 100%;
+  height: calc(100vh - 40px);
 
   @media (width <= 800px) {
     display: none;

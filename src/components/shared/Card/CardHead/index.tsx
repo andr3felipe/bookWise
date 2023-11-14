@@ -1,9 +1,10 @@
 import * as S from "./styles";
 
-type CardHeadProps = {
+export type CardHeadProps = {
   children: React.ReactNode;
+  size: "small" | "medium" | "large";
 };
 
-export const CardHead = ({ children }: CardHeadProps) => {
-  return <S.Container>{children}</S.Container>;
+export const CardHead = ({ size, children }: CardHeadProps) => {
+  return <S.Container size={size}>{children}</S.Container>;
 };

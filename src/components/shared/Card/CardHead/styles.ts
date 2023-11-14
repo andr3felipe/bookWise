@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { CardHeadProps } from ".";
 
-export const Container = styled.div`
+type ContainerProps = Pick<CardHeadProps, "size">;
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   max-height: 48px;
-  height: 100%;
+  height: ${({ size }) => (size === "large" ? "100%" : "auto")};
 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: ${({ size }) => (size === "large" ? "32px" : "0px")};
 `;

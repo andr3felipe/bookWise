@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { CardSummaryProps } from ".";
+
+type TextProps = Pick<CardSummaryProps, "size">;
 
 export const Container = styled.div``;
 
-export const Text = styled.p`
+export const Text = styled.p<TextProps>`
   font-size: 1.4rem;
   color: ${(props) => props.theme["gray-300"]};
   max-width: 432px;
