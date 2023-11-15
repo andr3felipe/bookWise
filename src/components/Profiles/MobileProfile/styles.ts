@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,9 +10,15 @@ export const Container = styled.div`
   max-height: 555px;
   max-width: 308px;
   background-color: ${(props) => props.theme["gray-800"]};
-  z-index: 99999;
 
   padding: 0px 56px 20px;
+`;
+
+export const CloseButtonContainer = styled.div`
+  max-width: 308px;
+  width: 100%;
+  border: 1px solid ${(props) => props.theme["gray-700"]};
+  border-top-left-radius: 4px;
 `;
 
 export const ProfileHead = styled.div`

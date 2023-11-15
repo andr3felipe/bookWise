@@ -81,11 +81,12 @@ export const ProfileMobile = styled.div`
   position: absolute;
   border-radius: 20px;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 
-  border-left: 1px solid ${(props) => props.theme["gray-700"]};
   background-color: ${(props) => props.theme["gray-800"]};
 
-  @media (width >= 1200px) {
+  @media (width > 1200px) {
     display: none;
   }
 `;

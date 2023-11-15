@@ -15,8 +15,9 @@ export const MobileProfile = ({ onClick }: ProfileProps) => {
       document.body.style.overflow = "scroll";
     };
   }, []);
+
   return (
-    <>
+    <S.CloseButtonContainer>
       <CloseButton onClick={onClick} />
       <S.Container>
         <S.ProfileHead>
@@ -31,6 +32,6 @@ export const MobileProfile = ({ onClick }: ProfileProps) => {
           <BookStatus />
         </S.BooksStatusContainer>
       </S.Container>
-    </>
+    </S.CloseButtonContainer>
   );
 };

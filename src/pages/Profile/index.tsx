@@ -24,7 +24,7 @@ export const Profile = () => {
         <S.Main>
           {books.slice(0, 4).map((book) => (
             <>
-              <Card.Root size="xl">
+              <Card.Root key={book.title} size="xl">
                 <Card.Head size="xl" gap={24}>
                   <Card.Image src={book.image} size="medium" />
                   <Card.Content justifyContent="space-between">
@@ -55,7 +55,7 @@ Proin sed proin at leo quis ac sem. Nam donec accumsan curabitur amet tortor qua
       </S.ProfileDesktop>
       {show && (
         <>
-          <S.ProfileMobile onBlur={() => setShow(false)}>
+          <S.ProfileMobile>
             <MobileProfile onClick={() => setShow(false)} />
           </S.ProfileMobile>
         </>
