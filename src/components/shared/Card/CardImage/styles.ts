@@ -3,9 +3,22 @@ import { CardImageProps } from ".";
 
 type ContainerProps = Pick<CardImageProps, "size">;
 
+const ENUM = {
+  width: {
+    small: "64px",
+    medium: "98px",
+    large: "108px",
+  },
+  height: {
+    small: "94px",
+    medium: "134px",
+    large: "152px",
+  },
+};
+
 export const Container = styled.figure<ContainerProps>`
-  max-width: ${({ size }) => (size === "large" ? "108px" : "64px")};
-  max-height: ${({ size }) => (size === "large" ? "152px" : "94px")};
+  max-width: ${({ size }) => ENUM.width[size]};
+  max-height: ${({ size }) => ENUM.height[size]};
   border-radius: 4px;
   overflow: hidden;
   width: 100%;
@@ -13,8 +26,8 @@ export const Container = styled.figure<ContainerProps>`
 
   > img {
     object-fit: fill;
-    max-width: ${({ size }) => (size === "large" ? "108px" : "64px")};
-    max-height: ${({ size }) => (size === "large" ? "152px" : "94px")};
+    max-width: ${({ size }) => ENUM.width[size]};
+    max-height: ${({ size }) => ENUM.height[size]};
     border-radius: 4px;
   }
 `;

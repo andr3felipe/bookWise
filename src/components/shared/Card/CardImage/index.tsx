@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 export type CardImageProps = {
-  size: "small" | "large";
+  size: "small" | "medium" | "large";
 } & React.ComponentProps<"img">;
 
 export const CardImage = ({ size, ...rest }: CardImageProps) => {

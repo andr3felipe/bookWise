@@ -13,7 +13,7 @@ const animation = keyframes`
 
 export const Blur = styled.div`
   position: absolute;
-  background-color: rgb(0, 0, 0, 0.3);
+  background-color: rgb(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
   top: -20px;
@@ -63,11 +63,12 @@ export const MobileClose = styled.button`
 `;
 
 export const HeaderContainer = styled.div`
-  position: absolute;
   display: none;
 
   @media (width <= 800px) {
     display: block;
+    position: fixed;
+    z-index: 99999;
   }
 `;
 

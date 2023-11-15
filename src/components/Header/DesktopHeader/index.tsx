@@ -1,11 +1,11 @@
 import { Icon } from "../../Icon";
 import { NavItem } from "../../NavItem";
 import * as S from "./styles";
-import { ChartLineUp, Binoculars, SignIn } from "@phosphor-icons/react";
+import { ChartLineUp, Binoculars, SignIn, User } from "@phosphor-icons/react";
 
 export const DesktopHeader = () => {
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer data-testid="desktop-header">
       <S.Header>
         <Icon icon="bookWise" />
         <S.Nav>
@@ -17,6 +17,10 @@ export const DesktopHeader = () => {
             <NavItem to={"/explorar"}>
               <Binoculars size={24} />
               Explorar
+            </NavItem>
+            <NavItem to={"/perfil"}>
+              <User size={24} />
+              Perfil
             </NavItem>
           </S.NavAlignItems>
           <NavItem to={"/"}>

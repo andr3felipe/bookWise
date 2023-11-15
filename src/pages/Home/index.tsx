@@ -40,7 +40,7 @@ export const Home = () => {
             <S.Text>Avaliações mais recentes</S.Text>
 
             {books.slice(0, 4).map((book) => (
-              <Card.Root size="large">
+              <Card.Root key={book.title} size="large">
                 <Card.Head size="large">
                   <Card.Profile
                     avatar={avatar}
@@ -73,7 +73,7 @@ export const Home = () => {
 
           <S.PopularBooksAlign>
             {books.slice(0, 4).map((book) => (
-              <Card.Root size="small">
+              <Card.Root key={book.title} size="small">
                 <Card.Body>
                   <Card.Image size="small" src={book.image} />
                   <Card.Content>
