@@ -1,10 +1,12 @@
 import * as S from "./styles";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 
-type InputProps = React.ComponentProps<"input">;
-export const Input = ({ ...rest }: InputProps) => {
+export type InputProps = {
+  width?: "small" | "large";
+} & React.ComponentProps<"input">;
+export const Input = ({ width, ...rest }: InputProps) => {
   return (
-    <S.Container>
+    <S.Container width={width}>
       <S.Input {...rest} />
       <MagnifyingGlass size={20} />
     </S.Container>

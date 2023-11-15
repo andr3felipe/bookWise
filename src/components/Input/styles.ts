@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { InputProps } from ".";
 
-export const Container = styled.div`
+type ContainerProps = Pick<InputProps, "width">;
+
+export const Container = styled.div<ContainerProps>`
   border-radius: 4px;
   max-height: 48px;
   height: 100%;
   padding: 14px 20px;
   background-color: white;
-  max-width: 433px;
+  max-width: ${({ width }) => (width === "large" ? "624px" : "433px")};
   width: 100%;
   background-color: ${(props) => props.theme["gray-800"]};
   border: 1px solid ${(props) => props.theme["gray-500"]};
