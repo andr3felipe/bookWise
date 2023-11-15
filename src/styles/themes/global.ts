@@ -18,9 +18,7 @@ html {
 body {
   background-color: ${(props) => props.theme["gray-800"]};
   -webkit-font-smoothing: antialiased;
-  height: 100vh;
   color: ${(props) => props.theme["gray-100"]};
-
 }
 
 body, input,  button, textarea {

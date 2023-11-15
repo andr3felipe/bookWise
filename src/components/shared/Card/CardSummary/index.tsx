@@ -26,14 +26,14 @@ export const CardSummary = ({
 
   const textLength =
     windowSize.width <= 600
-      ? text.slice(0, windowSize.width / (5 + (size !== "large" ? 6 : 0)))
+      ? text.slice(0, windowSize.width / (7 + (size !== "large" ? 6 : 0)))
           .length
       : text.slice(0, windowSize.width / (9 + (size !== "large" ? 5 : 0)))
           .length;
 
   const calc =
     windowSize.width <= 600
-      ? windowSize.width / (5 + (size !== "large" ? 6 : 0))
+      ? windowSize.width / (7 + (size !== "large" ? 6 : 0))
       : windowSize.width / (9 + (size !== "large" ? 5 : 0));
 
   useEffect(() => {
